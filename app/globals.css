@@ -1,0 +1,499 @@
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink-50: #fff0f5;
+  --pink-100: #ffe4ec;
+  --pink-200: #ffc1d6;
+  --pink-300: #ffa3c0;
+  --pink-400: #ff7aa8;
+  --pink-500: #ff4d8d;
+  --pink-600: #e91e63;
+  --pink-700: #c2185b;
+  --pink-800: #9c1450;
+  --pink-900: #7a1042;
+  --blush: #f8d7e0;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 40%, #f8d7e0 100%);
+  background-size: 400% 400%;
+  animation: bgShift 15s ease infinite;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--pink-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Floating Emojis ===== */
+.floating-emojis {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-emoji {
+  position: absolute;
+  bottom: -60px;
+  opacity: 0;
+  animation: floatUp 10s ease-in-out infinite;
+}
+
+.floating-emoji:nth-child(1) {
+  left: 4%;
+  animation-delay: 0s;
+  font-size: 1.4rem;
+  animation-duration: 9s;
+}
+
+.floating-emoji:nth-child(2) {
+  left: 13%;
+  animation-delay: 1.3s;
+  font-size: 1.7rem;
+  animation-duration: 11s;
+}
+
+.floating-emoji:nth-child(3) {
+  left: 22%;
+  animation-delay: 3.1s;
+  font-size: 1.1rem;
+  animation-duration: 8s;
+}
+
+.floating-emoji:nth-child(4) {
+  left: 31%;
+  animation-delay: 0.6s;
+  font-size: 2rem;
+  animation-duration: 12s;
+}
+
+.floating-emoji:nth-child(5) {
+  left: 40%;
+  animation-delay: 2.8s;
+  font-size: 1.3rem;
+  animation-duration: 9s;
+}
+
+.floating-emoji:nth-child(6) {
+  left: 48%;
+  animation-delay: 4.2s;
+  font-size: 1.5rem;
+  animation-duration: 10s;
+}
+
+.floating-emoji:nth-child(7) {
+  left: 56%;
+  animation-delay: 1.1s;
+  font-size: 1.2rem;
+  animation-duration: 8s;
+}
+
+.floating-emoji:nth-child(8) {
+  left: 64%;
+  animation-delay: 3.6s;
+  font-size: 1.8rem;
+  animation-duration: 11s;
+}
+
+.floating-emoji:nth-child(9) {
+  left: 72%;
+  animation-delay: 0.9s;
+  font-size: 1.4rem;
+  animation-duration: 9s;
+}
+
+.floating-emoji:nth-child(10) {
+  left: 80%;
+  animation-delay: 2.4s;
+  font-size: 1.6rem;
+  animation-duration: 10s;
+}
+
+.floating-emoji:nth-child(11) {
+  left: 88%;
+  animation-delay: 5.0s;
+  font-size: 1.1rem;
+  animation-duration: 12s;
+}
+
+.floating-emoji:nth-child(12) {
+  left: 95%;
+  animation-delay: 1.8s;
+  font-size: 1.9rem;
+  animation-duration: 8s;
+}
+
+.floating-emoji:nth-child(13) {
+  left: 9%;
+  animation-delay: 4.5s;
+  font-size: 1.3rem;
+  animation-duration: 10s;
+}
+
+.floating-emoji:nth-child(14) {
+  left: 52%;
+  animation-delay: 2.0s;
+  font-size: 2.1rem;
+  animation-duration: 11s;
+}
+
+.floating-emoji:nth-child(15) {
+  left: 35%;
+  animation-delay: 5.5s;
+  font-size: 1.0rem;
+  animation-duration: 9s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.7);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.35;
+    transform: translateY(-50vh) rotate(180deg) scale(1);
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ===== Main Card ===== */
+.valentine-card {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 50px 40px;
+  max-width: 520px;
+  width: 90vw;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 28px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 20px 60px rgba(233, 30, 99, 0.12),
+    0 4px 20px rgba(233, 30, 99, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.valentine-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 28px 70px rgba(233, 30, 99, 0.16),
+    0 8px 30px rgba(233, 30, 99, 0.08);
+}
+
+/* ===== Bear / Heart Emoji ===== */
+.bear-emoji {
+  font-size: 5rem;
+  margin-bottom: 10px;
+  display: block;
+  animation: bearBounce 2s ease-in-out infinite;
+}
+
+@keyframes bearBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Question ===== */
+.question {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--pink-700);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+/* ===== Cute Message ===== */
+.cute-message {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--pink-600);
+  margin-bottom: 30px;
+  min-height: 28px;
+  transition: opacity 0.3s ease;
+  font-style: italic;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 70px;
+}
+
+.btn-yes {
+  padding: 14px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--pink-500), var(--pink-600));
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.3);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.btn-yes:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(233, 30, 99, 0.4);
+}
+
+.btn-no {
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: 2px solid var(--pink-300);
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--pink-600);
+  transition: all 0.25s ease;
+  z-index: 2;
+  user-select: none;
+}
+
+.btn-no:hover {
+  border-color: var(--pink-400);
+}
+
+/* Growing Yes button */
+.btn-yes.grow-1 {
+  padding: 16px 48px;
+  font-size: 1.35rem;
+}
+
+.btn-yes.grow-2 {
+  padding: 18px 54px;
+  font-size: 1.5rem;
+}
+
+.btn-yes.grow-3 {
+  padding: 20px 60px;
+  font-size: 1.65rem;
+}
+
+.btn-yes.grow-4 {
+  padding: 22px 66px;
+  font-size: 1.8rem;
+}
+
+.btn-yes.grow-5 {
+  padding: 24px 72px;
+  font-size: 2rem;
+}
+
+.btn-yes.grow-6 {
+  padding: 26px 78px;
+  font-size: 2.2rem;
+}
+
+/* Shrinking No button */
+.btn-no.shrink-1 {
+  padding: 10px 26px;
+  font-size: 0.9rem;
+}
+
+.btn-no.shrink-2 {
+  padding: 8px 20px;
+  font-size: 0.8rem;
+}
+
+.btn-no.shrink-3 {
+  padding: 6px 16px;
+  font-size: 0.7rem;
+}
+
+.btn-no.shrink-4 {
+  padding: 5px 12px;
+  font-size: 0.6rem;
+}
+
+.btn-no.shrink-5 {
+  padding: 4px 8px;
+  font-size: 0.5rem;
+}
+
+.btn-no.shrink-6 {
+  padding: 3px 6px;
+  font-size: 0.4rem;
+}
+
+/* ===== No Count Badge ===== */
+.no-count {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--pink-400);
+  font-weight: 300;
+}
+
+/* ===== Celebration ===== */
+.celebration {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 60px 40px;
+  max-width: 520px;
+  width: 90vw;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 28px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 60px rgba(233, 30, 99, 0.15);
+  animation: celebrateIn 0.8s ease-out;
+}
+
+@keyframes celebrateIn {
+  0% {
+    transform: scale(0.5) rotate(-10deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.05) rotate(2deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.celebration .big-heart {
+  font-size: 6rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: heartPulse 0.8s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.celebration h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--pink-600);
+  margin-bottom: 12px;
+}
+
+.celebration p {
+  font-size: 1.3rem;
+  color: var(--pink-700);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.celebration .kiss-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-top: 20px;
+  animation: bearBounce 1.5s ease-in-out infinite;
+}
+
+/* ===== Confetti Burst ===== */
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  font-size: 1.6rem;
+  animation: confettiFall 3s ease-in forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 500px) {
+
+  .valentine-card,
+  .celebration {
+    padding: 35px 24px;
+  }
+
+  .question {
+    font-size: 1.6rem;
+  }
+
+  .bear-emoji {
+    font-size: 4rem;
+  }
+
+  .celebration h1 {
+    font-size: 1.9rem;
+  }
+}
