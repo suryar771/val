@@ -126,14 +126,14 @@ export default function ValentinePage() {
         </div>
       ) : (
         <div className="celebration">
-          <span className="big-heart">💖</span>
-          <h1>Yaaay!! 🥳🎉</h1>
+          <span className="big-heart">💕</span>
+          <h1>Yaaay!! 🥳</h1>
           <p>
             I knew you&apos;d say yes!
             <br />
             You just made me the happiest person ever! 🥹💕
           </p>
-          <span className="kiss-emoji">😘</span>
+          <span className="kiss-emoji">😙</span>
           <p style={{ marginTop: "16px", fontSize: "1rem", fontWeight: 300 }}>
             my love 💗
           </p>
